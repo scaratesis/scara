@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=style1.css rel="stylesheet">
+
+</head>
+<body>
+    <img class="Fondo" id = "imagen_fondo" src="Fondo.jpeg">
+    <div class="contenedor">
+        <div class="imagenespe">
+            <img class="logoespe" src="LogoEspeMCT.png">
+        </div>
+        <div class="cuadro_login">
+            <div class="icono_usuario">
+                <i class="user"></i>
+                <img class= "logo" src="Icono_SC.png">
+            </div>
+            <div class="titulo">
+                <h1>Acceso a SCARA</h1>
+            </div>
+            <form class="login">
+                <div class="grupo_datos">
+                    <input type="text" placeholder="Usuario" id="usuario" class="usuario_form">
+                </div>
+                <div class="grupo_datos">
+                    <input type="password" placeholder="Contraseña" id="contrasena" class="usuario_form">
+                </div>
+                <div class="grupo_datos">
+                    <button class="btn"  type="button" onClick="login()">Iniciar sesión</button>
+                    <script>
+                        
+                        function login(){
+                            var usuario = document.getElementById("usuario").value;
+                            var pass = document.getElementById("contrasena").value;
+                            if(usuario=="user" && pass=="pass"){
+                                window.open("http://ec2-44-212-228-187.compute-1.amazonaws.com:1880/ui", "_blank");
+                                window.open("http://ec2-44-212-228-187.compute-1.amazonaws.com:1880", "_self");
+                            }else{
+                                window.alert("Usuario o clave incorrecto");
+                            }                            
+                        }
+                        
+                    </script>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+<footer class="pie">
+    Derechos de autor
+</footer>
+</html>

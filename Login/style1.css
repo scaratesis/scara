@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 5vh;
+    min-width: 1px;
+}
+
+body{
+    height: 95vh;
+    width: 100%;
+}
+
+.Fondo{
+    position: absolute;
+    max-width: 90%;
+    max-height:100%;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.logoespe{
+    position: absolute;
+    top: 0%;
+
+    max-width: 34%;
+    max-height: 32%;
+}
+
+.cuadro_login{
+    background: rgb(127, 127, 127,0.15);
+    border-color:navy;
+    padding: 60px 20px 20px 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 340px;
+    font-size: 14px;
+    border-radius: 20px;
+    border:solid;
+    border-width: 5px;
+    border-color:white;
+    
+    
+}
+
+.icono_usuario{
+    background: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -50px;
+    border: solid;
+    border-color: black;
+}
+.logo{
+    position: absolute;
+    left: 17px;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+
+.titulo{
+    margin-bottom: 40px ;
+}
+
+.grupo_datos{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.usuario_form{
+    font-size: 16px;
+    outline: none;
+    width: calc(100%-10px);
+}
+
+.usuario_form:hover{
+    border: 2px solid #0fe0b0;
+}
+
+.btn{
+    font-size: 16px;
+    background:black;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 3px 3px 3px rgb(140, 140, 140);
+    transition: 0.2s;
+}
+
+.pie{
+    background-image: white;
+    position: relative;
+    font-size: 10px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 19px;
+}

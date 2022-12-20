@@ -1,0 +1,536 @@
+[
+    {
+        "id": "57655f760cad6dcb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4cf5e0f43f3b723e",
+        "type": "pythonshell in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "pyfile": "/home/scaratesis/Vision/Vision.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 660,
+        "y": 240,
+        "wires": [
+            [
+                "808b3d858a07938a",
+                "0b6eea11e128fc30"
+            ]
+        ]
+    },
+    {
+        "id": "4517c8cbd55e92a7",
+        "type": "function",
+        "z": "57655f760cad6dcb",
+        "name": "function 1",
+        "func": "msg.payload = 1;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "4cf5e0f43f3b723e"
+            ]
+        ]
+    },
+    {
+        "id": "a316c5d3d429039e",
+        "type": "mqtt in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Luz",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8ed73ab41f904d81",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "e79e5f0a25e54788"
+            ]
+        ]
+    },
+    {
+        "id": "fefab16f8dbf04f2",
+        "type": "mqtt out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Camara",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ed73ab41f904d81",
+        "x": 440,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a521ee5e805bd4cf",
+        "type": "usbcamera",
+        "z": "57655f760cad6dcb",
+        "filemode": "0",
+        "filename": "image01.jpg",
+        "filedefpath": "1",
+        "filepath": "/home/scaratesis/Vision",
+        "fileformat": "jpeg",
+        "resolution": "1",
+        "name": "",
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "fefab16f8dbf04f2",
+                "5675888e10efe0d6"
+            ]
+        ]
+    },
+    {
+        "id": "89a468fad8dfe147",
+        "type": "mqtt in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Vision",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8ed73ab41f904d81",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "a521ee5e805bd4cf"
+            ]
+        ]
+    },
+    {
+        "id": "5675888e10efe0d6",
+        "type": "usbcamera",
+        "z": "57655f760cad6dcb",
+        "filemode": "1",
+        "filename": "Foto.png",
+        "filedefpath": "0",
+        "filepath": "/home/scaratesis/Vision/",
+        "fileformat": "png",
+        "resolution": "4",
+        "name": "",
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "4517c8cbd55e92a7"
+            ]
+        ]
+    },
+    {
+        "id": "808b3d858a07938a",
+        "type": "mqtt out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Posiciones",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ed73ab41f904d81",
+        "x": 850,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2ed633415902d0a9",
+        "type": "mqtt in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Switch",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8ed73ab41f904d81",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "09802364a197d6ee"
+            ]
+        ]
+    },
+    {
+        "id": "76ad7336d99c6295",
+        "type": "mqtt in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "Reset",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "8ed73ab41f904d81",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "db1b5b9aa80f25d1"
+            ]
+        ]
+    },
+    {
+        "id": "0b6eea11e128fc30",
+        "type": "file in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "filename": "/home/scaratesis/Vision/Deteccion.png",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 790,
+        "y": 300,
+        "wires": [
+            [
+                "5e728106c8b6ede2"
+            ]
+        ]
+    },
+    {
+        "id": "5e728106c8b6ede2",
+        "type": "mqtt out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "ResultadoVision",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ed73ab41f904d81",
+        "x": 900,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c91ca26f1ee42dae",
+        "type": "inject",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "db1b5b9aa80f25d1"
+            ]
+        ]
+    },
+    {
+        "id": "1b465cdfe0bfa804",
+        "type": "inject",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "09802364a197d6ee"
+            ]
+        ]
+    },
+    {
+        "id": "e79e5f0a25e54788",
+        "type": "rpi-gpio out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "pin": "4",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 300,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "09802364a197d6ee",
+        "type": "rpi-gpio out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "pin": "21",
+        "set": true,
+        "level": "1",
+        "freq": "100",
+        "out": "out",
+        "bcm": true,
+        "x": 300,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "db1b5b9aa80f25d1",
+        "type": "rpi-gpio out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "pin": "22",
+        "set": true,
+        "level": "1",
+        "freq": "100",
+        "out": "out",
+        "bcm": true,
+        "x": 300,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "bfc4b487351f2511",
+        "type": "comment",
+        "z": "57655f760cad6dcb",
+        "name": "EJECUCIÓN DE SCRIPT DE DETECCIÓN DE COLORES Y FIGURAS (VISIÓN ARTIFICIAL)",
+        "info": "",
+        "x": 380,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4ba4da02563841b5",
+        "type": "comment",
+        "z": "57655f760cad6dcb",
+        "name": "CONTROL DE ENCENDIDO DE SCARA/RESET DE ARDUINO",
+        "info": "",
+        "x": 290,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1699d938642fdf32",
+        "type": "mqtt in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "scara",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "8ed73ab41f904d81",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "f1f5f24fa2138c0c"
+            ]
+        ]
+    },
+    {
+        "id": "e64558d2ee7a515b",
+        "type": "function",
+        "z": "57655f760cad6dcb",
+        "name": "function 3",
+        "func": "msg.payload = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 840,
+        "wires": [
+            [
+                "c8d28637b8d2977a"
+            ]
+        ]
+    },
+    {
+        "id": "c8d28637b8d2977a",
+        "type": "delay",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "4",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 840,
+        "wires": [
+            [
+                "a8258e23020c2bb3"
+            ]
+        ]
+    },
+    {
+        "id": "a8258e23020c2bb3",
+        "type": "mqtt out",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "topic": "sensor",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ed73ab41f904d81",
+        "x": 690,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "bbdd5449df0d3b19",
+        "type": "serial in",
+        "z": "57655f760cad6dcb",
+        "name": "",
+        "serial": "2928f34547a1811c",
+        "x": 130,
+        "y": 840,
+        "wires": [
+            [
+                "e64558d2ee7a515b"
+            ]
+        ]
+    },
+    {
+        "id": "f1f5f24fa2138c0c",
+        "type": "serial out",
+        "z": "57655f760cad6dcb",
+        "name": "MEGA",
+        "serial": "2928f34547a1811c",
+        "x": 370,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6bb35dcced1c576f",
+        "type": "comment",
+        "z": "57655f760cad6dcb",
+        "name": "ENVÍO DE INFORMACIÓN DE SENSORES A NODE-RED EC2",
+        "info": "",
+        "x": 310,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "801e608bc055ea40",
+        "type": "comment",
+        "z": "57655f760cad6dcb",
+        "name": "RECEPCIÓN DE INSTRUCCIONES DE NODE-RED EC2",
+        "info": "",
+        "x": 290,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "8ed73ab41f904d81",
+        "type": "mqtt-broker",
+        "name": "AWS",
+        "broker": "a1e0eety3s6577-ats.iot.us-east-1.amazonaws.com",
+        "port": "8883",
+        "tls": "7c6f9a3837af7e43",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7c6f9a3837af7e43",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "037bcb2d05480158d9a6a23d31db66fc8d98f20f479c7dedf59619f24640d2d4-certificate.pem.crt",
+        "keyname": "037bcb2d05480158d9a6a23d31db66fc8d98f20f479c7dedf59619f24640d2d4-private.pem.key",
+        "caname": "AmazonRootCA1.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
